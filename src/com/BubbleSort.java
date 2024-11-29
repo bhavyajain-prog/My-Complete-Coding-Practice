@@ -1,4 +1,4 @@
-package com.Algorithms;
+package com;
 
 public class BubbleSort {
     private static void bubbleSort(int[] arr) {
