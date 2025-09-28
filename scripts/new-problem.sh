@@ -60,45 +60,7 @@ function create_leetcode_template
         exit 1
     end
     
-    cat > "$file_path" << EOF
-package platforms.leetcode;
-
-import datastructures.*;
-import java.util.*;
-
-/**
- * LeetCode Problem: $problem_name
- * Difficulty: $difficulty
- * 
- * Problem Description:
- * [Add problem description here]
- * 
- * Approach:
- * [Describe your approach here]
- * 
- * Time Complexity: O(?)
- * Space Complexity: O(?)
- */
-public class $problem_name {
-    
-    public void solution() {
-        // TODO: Implement solution
-    }
-    
-    /**
-     * Test cases
-     */
-    public static void main(String[] args) {
-        $problem_name solution = new $problem_name();
-        
-        // Test case 1
-        // Expected: 
-        // Actual: 
-        
-        System.out.println("All tests passed! ✅");
-    }
-}
-EOF
+    printf "package platforms.leetcode;\n\nimport datastructures.*;\nimport java.util.*;\n\n/**\n * LeetCode Problem: %s\n * Difficulty: %s\n * \n * Problem Description:\n * [Add problem description here]\n * \n * Approach:\n * [Describe your approach here]\n * \n * Time Complexity: O(?)\n * Space Complexity: O(?)\n */\npublic class %s {\n    \n    public void solution() {\n        // TODO: Implement solution\n    }\n    \n    /**\n     * Test cases\n     */\n    public static void main(String[] args) {\n        %s solution = new %s();\n        \n        // Test case 1\n        // Expected: \n        // Actual: \n        \n        System.out.println(\"All tests passed! ✅\");\n    }\n}\n" "$problem_name" "$difficulty" "$problem_name" "$problem_name" "$problem_name" > "$file_path"
     
     echo "✅ Created LeetCode template: $file_path"
     echo "📝 Don't forget to:"
@@ -117,49 +79,7 @@ function create_codeforces_template
         exit 1
     end
     
-    cat > "$file_path" << EOF
-package platforms.codeforces;
-
-import utils.InputReader;
-import java.io.*;
-import java.util.*;
-
-/**
- * Codeforces Problem: $problem_name
- * 
- * Problem Description:
- * [Add problem description here]
- * 
- * Approach:
- * [Describe your approach here]
- * 
- * Time Complexity: O(?)
- * Space Complexity: O(?)
- */
-public class $problem_name {
-    
-    public static void main(String[] args) {
-        InputReader reader = new InputReader();
-        PrintWriter writer = new PrintWriter(System.out);
-        
-        // Read input
-        // int n = reader.nextInt();
-        
-        // Solve the problem
-        // TODO: Implement solution
-        
-        // Output result
-        // writer.println(result);
-        
-        writer.flush();
-        writer.close();
-    }
-    
-    private static void solve() {
-        // Helper method for solution logic
-    }
-}
-EOF
+    printf "package platforms.codeforces;\n\nimport utils.InputReader;\nimport java.io.*;\nimport java.util.*;\n\n/**\n * Codeforces Problem: %s\n * \n * Problem Description:\n * [Add problem description here]\n * \n * Approach:\n * [Describe your approach here]\n * \n * Time Complexity: O(?)\n * Space Complexity: O(?)\n */\npublic class %s {\n    \n    public static void main(String[] args) {\n        InputReader reader = new InputReader();\n        PrintWriter writer = new PrintWriter(System.out);\n        \n        // Read input\n        // int n = reader.nextInt();\n        \n        // Solve the problem\n        // TODO: Implement solution\n        \n        // Output result\n        // writer.println(result);\n        \n        writer.flush();\n        writer.close();\n    }\n    \n    private static void solve() {\n        // Helper method for solution logic\n    }\n}\n" "$problem_name" "$problem_name" > "$file_path"
     
     echo "✅ Created Codeforces template: $file_path"
     echo "📝 Don't forget to:"
