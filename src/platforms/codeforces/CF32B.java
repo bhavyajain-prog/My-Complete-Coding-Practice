@@ -1,4 +1,3 @@
-package platforms.codeforces;
 import java.util.Scanner;
 
 void main() {

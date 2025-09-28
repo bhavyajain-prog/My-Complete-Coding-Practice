@@ -9,7 +9,8 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode() {}
+    public TreeNode() {
+    }
 
     public TreeNode(int val) {
         this.val = val;
@@ -33,24 +34,24 @@ public class TreeNode {
         TreeNode root = new TreeNode(arr[0]);
         java.util.Queue<TreeNode> queue = new java.util.LinkedList<>();
         queue.offer(root);
-        
+
         int i = 1;
         while (!queue.isEmpty() && i < arr.length) {
             TreeNode node = queue.poll();
-            
+
             if (i < arr.length && arr[i] != null) {
                 node.left = new TreeNode(arr[i]);
                 queue.offer(node.left);
             }
             i++;
-            
+
             if (i < arr.length && arr[i] != null) {
                 node.right = new TreeNode(arr[i]);
                 queue.offer(node.right);
             }
             i++;
         }
-        
+
         return root;
     }
 
@@ -69,17 +70,20 @@ public class TreeNode {
      * Helper method for level-order traversal printing
      */
     public static void printLevelOrder(TreeNode root) {
-        if (root == null) return;
-        
+        if (root == null)
+            return;
+
         java.util.Queue<TreeNode> queue = new java.util.LinkedList<>();
         queue.offer(root);
-        
+
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             System.out.print(node.val + " ");
-            
-            if (node.left != null) queue.offer(node.left);
-            if (node.right != null) queue.offer(node.right);
+
+            if (node.left != null)
+                queue.offer(node.left);
+            if (node.right != null)
+                queue.offer(node.right);
         }
         System.out.println();
     }

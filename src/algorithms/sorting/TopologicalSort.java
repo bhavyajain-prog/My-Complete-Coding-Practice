@@ -1,16 +1,8 @@
-package algorithms.sorting;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
-public class TopologicalSort {
-    private static List<Integer> topologicalSort(List<List<Integer>> adj) {
+    List<Integer> topologicalSort(List<List<Integer>> adj) {
         int v = adj.size();
         int[] deg = new int[v];
-        for (int i = 0; i < v; i++) {
-            for (var x : adj.get(i))
+        for (List<Integer> integers : adj) {
+            for (var x : integers)
                 deg[x]++;
         }
         Queue<Integer> q = new LinkedList<>();
@@ -29,7 +21,6 @@ public class TopologicalSort {
         return result;
     }
 
-    public static void main(String[] args) {
+    void main() {
         System.out.println(topologicalSort(List.of(List.of(), List.of(3), List.of(3), List.of(), List.of(0, 1), List.of(0, 2))));
     }
-}

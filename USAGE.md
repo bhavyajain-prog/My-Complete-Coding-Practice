@@ -26,6 +26,7 @@ src/
 ## 🛠️ Scripts Usage
 
 ### 1. Auto-Push Script
+
 Automatically commits and pushes your changes with meaningful commit messages.
 
 ```bash
@@ -34,12 +35,14 @@ Automatically commits and pushes your changes with meaningful commit messages.
 ```
 
 **Features:**
+
 - ✅ Automatically detects what type of problems you've added
 - ✅ Generates meaningful commit messages
 - ✅ Shows progress summary after push
 - ✅ Handles multiple file types intelligently
 
 ### 2. Migration Script
+
 Organizes your existing files into the new structure (run this once).
 
 ```bash
@@ -48,6 +51,7 @@ Organizes your existing files into the new structure (run this once).
 ```
 
 **What it does:**
+
 - Moves `src/com/LeetCode/*.java` → `src/platforms/leetcode/`
 - Moves `src/CF*.java` → `src/platforms/codeforces/`
 - Moves `src/*Sort*.java` → `src/algorithms/sorting/`
@@ -55,6 +59,7 @@ Organizes your existing files into the new structure (run this once).
 - Fixes package declarations and imports
 
 ### 3. New Problem Template Generator
+
 Creates boilerplate code for new problems.
 
 ```bash
@@ -66,6 +71,7 @@ Creates boilerplate code for new problems.
 ```
 
 ### 4. Test Runner
+
 Compiles and runs your Java solutions.
 
 ```bash
@@ -78,16 +84,19 @@ Compiles and runs your Java solutions.
 ### Naming Conventions
 
 #### LeetCode Problems
+
 - Use format: `Q<number>.java` (e.g., `Q1.java`, `Q283.java`)
 - For problems with names: `Q<number>_<ShortName>.java` (e.g., `Q1_TwoSum.java`)
 
-#### Codeforces Problems  
+#### Codeforces Problems
+
 - Use format: `CF<contest><problem>.java` (e.g., `CF1234A.java`)
 - Include contest number and problem letter
 
 ### File Organization
 
 #### LeetCode Solutions Template
+
 ```java
 package platforms.leetcode;
 
@@ -97,12 +106,12 @@ import java.util.*;
 /**
  * LeetCode Problem: Q1 - Two Sum
  * Difficulty: Easy
- * 
- * Problem: Given an array of integers nums and an integer target, 
+ *
+ * Problem: Given an array of integers nums and an integer target,
  * return indices of the two numbers such that they add up to target.
- * 
+ *
  * Approach: Use HashMap to store complements
- * 
+ *
  * Time Complexity: O(n)
  * Space Complexity: O(n)
  */
@@ -110,7 +119,7 @@ public class Q1 {
     public int[] twoSum(int[] nums, int target) {
         // Implementation here
     }
-    
+
     public static void main(String[] args) {
         // Test cases
     }
@@ -118,6 +127,7 @@ public class Q1 {
 ```
 
 #### Codeforces Solutions Template
+
 ```java
 package platforms.codeforces;
 
@@ -133,9 +143,9 @@ public class CF1234A {
     public static void main(String[] args) {
         InputReader reader = new InputReader();
         PrintWriter writer = new PrintWriter(System.out);
-        
+
         // Solution logic
-        
+
         writer.flush();
         writer.close();
     }
@@ -145,11 +155,12 @@ public class CF1234A {
 ## 🔧 Data Structure Usage
 
 ### ListNode Helper Methods
+
 ```java
 // Create linked list from array
 ListNode head = ListNode.fromArray(new int[]{1, 2, 3, 4});
 
-// Convert to array  
+// Convert to array
 int[] arr = ListNode.toArray(head);
 
 // Print linked list
@@ -157,6 +168,7 @@ ListNode.print(head); // Output: 1 -> 2 -> 3 -> 4
 ```
 
 ### TreeNode Helper Methods
+
 ```java
 // Create tree from level-order array
 TreeNode root = TreeNode.fromArray(new Integer[]{1, 2, 3, null, null, 4, 5});
@@ -167,6 +179,7 @@ TreeNode.printInOrder(root);
 ```
 
 ### Fast Input Reader (for competitive programming)
+
 ```java
 InputReader reader = new InputReader();
 int n = reader.nextInt();
@@ -177,14 +190,16 @@ String s = reader.next();
 ## 📊 Progress Tracking
 
 After each push, the auto-push script shows:
+
 - Number of LeetCode solutions
-- Number of Codeforces solutions  
+- Number of Codeforces solutions
 - Total Java files in repository
 - Encouraging message!
 
 ## 🚀 Daily Workflow
 
 1. **Start a new problem:**
+
    ```bash
    ./scripts/new-problem.sh leetcode Q2 Medium
    ```
@@ -192,6 +207,7 @@ After each push, the auto-push script shows:
 2. **Code your solution** in your favorite IDE
 
 3. **Test your solution:**
+
    ```bash
    ./scripts/test.sh src/platforms/leetcode/Q2.java
    ```
@@ -216,7 +232,7 @@ git status
 rm -rf src/com/
 rm src/CF*.java src/LC*.java src/*Sort*.java 2>/dev/null
 
-# 4. Push the reorganized structure  
+# 4. Push the reorganized structure
 ./scripts/auto-push.sh
 ```
 

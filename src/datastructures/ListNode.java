@@ -8,7 +8,8 @@ public class ListNode {
     public int val;
     public ListNode next;
 
-    public ListNode() {}
+    public ListNode() {
+    }
 
     public ListNode(int val) {
         this.val = val;
@@ -23,16 +24,17 @@ public class ListNode {
      * Helper method to create a linked list from array
      */
     public static ListNode fromArray(int[] arr) {
-        if (arr.length == 0) return null;
-        
+        if (arr.length == 0)
+            return null;
+
         ListNode head = new ListNode(arr[0]);
         ListNode current = head;
-        
+
         for (int i = 1; i < arr.length; i++) {
             current.next = new ListNode(arr[i]);
             current = current.next;
         }
-        
+
         return head;
     }
 
@@ -42,12 +44,12 @@ public class ListNode {
     public static int[] toArray(ListNode head) {
         java.util.List<Integer> list = new java.util.ArrayList<>();
         ListNode current = head;
-        
+
         while (current != null) {
             list.add(current.val);
             current = current.next;
         }
-        
+
         return list.stream().mapToInt(i -> i).toArray();
     }
 
